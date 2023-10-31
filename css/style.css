@@ -1,0 +1,61 @@
+header {
+    background-color: #333; /* Background color for the header. */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    width:500px;
+    margin: 0 auto;
+    background: lightgray;
+    text-align: center;
+    /* You can add fallback fonts after 'Orbitron' in case the font doesn't load properly. */
+  }
+
+
+  #title {
+    display: inline; /* Display the title inline with the links. */
+    font-family: 'Orbitron', sans-serif;
+    /* Add any other styling you want for your title here. */
+  }
+
+.left-link {
+    display: inline; /* Display the link on the left side inline with other elements. */
+    margin-right: 20px; /* Add some spacing between the links and the title. */  
+}
+
+.right-link {
+    display: inline; /* Display the link on the right side inline with other elements. */
+    margin-left: 20px; /* Add some spacing between the links and the title. */
+  }
+
+.mainMenu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.mainMenu li {
+    margin: 0 20px;
+}
+  
+.mainMenu a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu-toggle:checked + .menu nav {
+    display: block; /* Show the navigation menu when the checkbox is checked. */
+}
+  
+  .menu-toggle:checked + .menu .hamburger:after {
+    content: "✕"; /* Change the content to an "X" to indicate close when the menu is open. */
+}
+  
+  .menu-toggle:checked + .menu .hamburger:before {
+    content: ""; /* Hide the middle bar when the menu is open. */
+}
