@@ -1,61 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 header {
     background-color: #333; /* Background color for the header. */
     color: white;
-    text-align: center;
-    padding: 10px 0;
+    padding: 2px 0;
   }
-
-
 h1 {
-    font-family: 'Orbitron', sans-serif;
-    width:500px;
-    margin: 0 auto;
-    background: lightgray;
     text-align: center;
+    font-family: 'Orbitron', sans-serif;
     /* You can add fallback fonts after 'Orbitron' in case the font doesn't load properly. */
   }
 
+li {
+  list-style: none;
+}
 
-  #title {
-    display: inline; /* Display the title inline with the links. */
-    font-family: 'Orbitron', sans-serif;
-    /* Add any other styling you want for your title here. */
+a {
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.navbar {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 100px;
+  padding-right: 50px;
+}
+
+.nav-link {
+  transition: 0.7s ease;
+}
+
+.brand-title {
+  font-size: 2rem;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+@media screen and (max-width:768px){
+  .hamburger {
+    display: block;
   }
 
-.left-link {
-    display: inline; /* Display the link on the left side inline with other elements. */
-    margin-right: 20px; /* Add some spacing between the links and the title. */  
-}
-
-.right-link {
-    display: inline; /* Display the link on the right side inline with other elements. */
-    margin-left: 20px; /* Add some spacing between the links and the title. */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
   }
 
-.mainMenu {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 
-.mainMenu li {
-    margin: 0 20px;
-}
-  
-.mainMenu a {
-    text-decoration: none;
-    color: white;
-}
+  .nav-menu {
+    position: fixed;
+    left: 100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #333;
+    width: 100%;
+  }
 
-.menu-toggle:checked + .menu nav {
-    display: block; /* Show the navigation menu when the checkbox is checked. */
-}
-  
-  .menu-toggle:checked + .menu .hamburger:after {
-    content: "✕"; /* Change the content to an "X" to indicate close when the menu is open. */
-}
-  
-  .menu-toggle:checked + .menu .hamburger:before {
-    content: ""; /* Hide the middle bar when the menu is open. */
+  .nav-menu.active {
+    left: 0%;
+  }
 }
