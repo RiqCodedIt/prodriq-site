@@ -10,6 +10,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.15/index.global.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/web-component@6.1.15/index.global.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.15/index.global.min.js'></script>
+  <script src='js/bookings.js'></script>
   <title>Bookings Page</title>
 </head>
 <body>
@@ -29,20 +33,92 @@
             </nav>
             <div id="scroll-container">
               <div id="scroll-text">
-                <span>MUSIC</span>
-                <span>MUSIC</span>
-                <span>MUSIC</span>
-                <span>MUSIC</span>
-                <span>MUSIC</span>
-                <span>MUSIC</span> 
-                <span>MUSIC</span>
-                <span>MUSIC</span>
-                <span>MUSIC</span>
-                <span>MUSIC</span>
-                <span>MUSIC</span>
-                <div>
+                <div class="element">
+                  <i class="fa-solid fa-headphones"></i>
+                  <span>Cash Cobain - Rump Punch</span>
+                </div>
+                <div class="element">
+                  <i class="fa-solid fa-headphones"></i>
+                  <span>Merges, Kaelin Ellis - cool_v2</span>
+                </div>
+                <div class="element">
+                  <i class="fa-solid fa-headphones"></i>
+                  <span>Deekapz - Vice Versa</span>
+                </div>
+                <div class="element">
+                  <i class="fa-solid fa-headphones"></i>
+                  <span>che - #RESIDE</span>
+                </div>
+                <div class="element">
+                  <i class="fa-solid fa-headphones"></i>
+                  <span>Leon Thomas - MUTT</span>
+                </div>
+                <div class="element">
+                  <i class="fa-solid fa-headphones"></i>
+                  <span>Cash Cobain - Rump Punch</span>
+                </div>
+                <div class="element">
+                  <i class="fa-solid fa-headphones"></i>
+                  <span>Merges, Kaelin Ellis - cool_v2</span>
+                </div>
+                <div class="element">
+                  <i class="fa-solid fa-headphones"></i>
+                  <span>Deekapz - Vice Versa</span>
+                </div>
+                <div class="element">
+                  <i class="fa-solid fa-headphones"></i>
+                  <span>che - #RESIDE</span>
+                </div>
+                <div class="element">
+                  <i class="fa-solid fa-headphones"></i>
+                  <span>Leon Thomas - MUTT</span>
+                </div>
+              <div>
             </div>
     </header>
+    <!-- <div id='calendar'></div> -->
 
+    <!-- For the input radio, name must match to be treated as a group -->
+    <div class="card">
+      <h1>Fill out this form</h1>
+      <div class="studio-selection">
+        <div class="slot">
+          <input type="radio" id="chickenRoom" name="studio">
+          <label for="chickenRoom">The Chicken Room</label>
+        </div>
+        <div class="slot">
+          <input type="radio" id="theRecordCo" name="studio">
+          <label for="theRecordCo">The Record Co</label>
+        </div>
+      </div>
+      <div class="date-selection">
+        <label for="sessionDate">Pick a date:</label>
+        <input type="date" id="sessionDate" name="session">
+      </div>
+      <div class="hours-selection">
+        <label for="sessionDate">Pick hours:</label>
+        <select name="time" id="time-slots">
+          <option value="1hr">1 hr</option>
+          <option value="2hr">2 hr</option>
+          <option value="3hr">3 hr</option>
+          <option value="4hr">4 hr</option>
+          <option value="5+hrs">5+ hr</option>
+        </select>
+      </div>
+      <div class="time-input">
+        <label for="sessionDate">Pick start time:</label>
+        <select name="time" id="time-slots">
+          <option value="4pm">4pm</option>
+          <option value="5pm">5pm</option>
+          <option value="6pm">6pm</option>
+          <option value="7pm">7pm</option>
+          <option value="8pm">8pm</option>
+          <option value="9pm">9pm</option>
+          <option value="10pm">10pm</option>
+          <option value="11pm">11pm</option>
+        </select>
+      </div>
+        <button class="submit-button">Submit</button>
+    </div>
 </body>
 </html>
