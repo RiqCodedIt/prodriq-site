@@ -1,0 +1,60 @@
+.page-content {
+    color: white;
+    width: 80%;
+    max-width: 1200px;
+    margin: 100px auto 50px;
+    padding: 2rem;
+    min-height: 70vh;
+    background: #2e1d23;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.page-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #f7a8b8;
+}
+
+.page-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #f8c3a6;
+}
+
+.page-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.content-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #703c6e;
+    border-radius: 8px;
+}
+
+/* Error and loading states */
+.error-message {
+    color: #f7a8b8;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.loading-indicator {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #f8c3a6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-content {
+        width: 90%;
+        padding: 1rem;
+    }
+} 
