@@ -13,80 +13,67 @@
 
 .tracks-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
 }
 
 .track-card {
     background: #703c6e;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .track-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-.album-art {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 0.8rem;
-}
-
-.track-info {
+.track-header {
     text-align: center;
     width: 100%;
+    margin-bottom: 1rem;
 }
 
 .track-title {
     font-weight: bold;
     margin-bottom: 0.3rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: #f8c3a6;
 }
 
 .track-artist {
-    opacity: 0.8;
     margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .track-role {
     font-style: italic;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-bottom: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
-.audio-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
+.spotify-embed-container {
+    width: 100%;
     margin-top: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
 }
 
-.play-button {
-    background: #f7a8b8;
-    border: none;
-    color: #2e1d23;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.play-button:hover {
-    background: #f8c3a6;
-    transform: scale(1.05);
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .tracks-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .track-card {
+        padding: 1rem;
+    }
 }
 
 /* Services Section */

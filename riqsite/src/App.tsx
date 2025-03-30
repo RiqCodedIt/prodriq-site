@@ -7,6 +7,7 @@ import About from './pages/About'
 import Beats from './pages/Beats'
 import Mixing from './pages/Mixing'
 import Booking from './pages/Booking'
+import Success from './pages/Success'
 import NavBar from './components/NavBar'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/beats" element={<Beats />} />
         <Route path="/mixing" element={<Mixing />} />
         <Route path="/booking" element={<Booking />} />
+        <Route path="/success" element={<Success />} />
       </Routes>
     </div>
   )

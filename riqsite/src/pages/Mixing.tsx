@@ -223,6 +223,7 @@ const Mixing = () => {
                                 albumArt={track.albumArt}
                                 previewUrl={track.previewUrl}
                                 role={track.role}
+                                id={track.id}
                             />
                         ))}
                     </div>

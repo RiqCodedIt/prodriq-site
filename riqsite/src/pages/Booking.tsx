@@ -114,13 +114,54 @@ const Booking = () => {
     };
     
     // Handle form submission
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         
-        if (validateForm()) {
-            // In a real app, you would submit this to your backend
-            alert('Booking submitted successfully! We will contact you to confirm.');
-            navigate('/');
+        if (validateForm() && bookingState) {
+            try {
+                // Combine form data with booking state
+                const bookingData = {
+                    service: {
+                        id: bookingState.selectedService,
+                        name: bookingState.serviceName,
+                        price: bookingState.servicePrice,
+                    },
+                    client: {
+                        fullName: formData.fullName,
+                        phoneNumber: formData.phoneNumber,
+                    },
+                    session: {
+                        date: formData.date,
+                        time: formData.time,
+                        location: formData.location,
+                    },
+                    project: {
+                        description: bookingState.description
+                    }
+                };
+                
+                // Send data to the server
+                const response = await fetch('http://localhost:4242/create-checkout-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(bookingData),
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                
+                // Get the checkout URL from the response
+                const data = await response.json();
+                
+                // Redirect to Stripe checkout
+                window.location.href = data.url;
+            } catch (error) {
+                console.error('Error creating checkout session:', error);
+                alert('Something went wrong. Please try again later.');
+            }
         }
     };
     
@@ -222,7 +263,7 @@ const Booking = () => {
                     </div>
                     
                     <div className="form-group">
-                        <label htmlFor="time">Preferred Time</label>
+                        <label htmlFor="time">Preferred Start Time</label>
                         <select 
                             id="time" 
                             name="time" 
