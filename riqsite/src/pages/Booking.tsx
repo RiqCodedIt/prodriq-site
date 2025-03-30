@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../styles/PageContent.css';
 import '../styles/Booking.css';
@@ -68,7 +69,7 @@ const Booking = () => {
     }, [location.state, navigate]);
     
     // Handle form changes
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
@@ -114,7 +115,7 @@ const Booking = () => {
     };
     
     // Handle form submission
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         
         if (validateForm() && bookingState) {
@@ -180,7 +181,7 @@ const Booking = () => {
         }
     };
     
-    const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handlePhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
         const formattedNumber = formatPhoneNumber(e.target.value);
         setFormData({
             ...formData,

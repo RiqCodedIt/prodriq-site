@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 
 interface SpotifyTrackProps {
     title: string;
@@ -9,10 +9,9 @@ interface SpotifyTrackProps {
     id: string;
 }
 
-const SpotifyTrack: React.FC<SpotifyTrackProps> = ({ 
+const SpotifyTrack: FC<SpotifyTrackProps> = ({ 
     title, 
     artist, 
-    albumArt, 
     id,
     role 
 }) => {

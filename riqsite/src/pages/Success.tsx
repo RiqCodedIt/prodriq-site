@@ -1,25 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import '../styles/PageContent.css';
 import '../styles/Success.css';
 
 const Success = () => {
     const [bookingId, setBookingId] = useState<string | null>(null);
-    const [sessionId, setSessionId] = useState<string | null>(null);
     const location = useLocation();
 
     useEffect(() => {
         // Get query parameters from URL
         const params = new URLSearchParams(location.search);
         const bookingIdParam = params.get('booking_id');
-        const sessionIdParam = params.get('session_id');
 
         if (bookingIdParam) {
             setBookingId(bookingIdParam);
-        }
-
-        if (sessionIdParam) {
-            setSessionId(sessionIdParam);
         }
     }, [location]);
 
